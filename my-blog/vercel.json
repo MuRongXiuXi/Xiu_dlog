@@ -1,0 +1,6 @@
+{
+  "buildCommand": "python3 build.py --clean",
+  "outputDirectory": "public",
+  "cleanUrls": false,
+  "trailingSlash": false
+}

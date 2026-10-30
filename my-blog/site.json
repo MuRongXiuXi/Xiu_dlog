@@ -1,0 +1,16 @@
+{
+  "title": "我的博客",
+  "author": "站长",
+  "description": "记录学习、折腾与思考。",
+  "url": "",
+  "base_path": "",
+  "lang": "zh-CN",
+  "footer": "",
+  "nav": [
+    { "name": "首页", "path": "index.html" },
+    { "name": "归档", "path": "archive.html" },
+    { "name": "标签", "path": "tags/index.html" },
+    { "name": "搜索", "path": "search.html" },
+    { "name": "关于", "path": "about.html" }
+  ]
+}

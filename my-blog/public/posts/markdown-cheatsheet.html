@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这个博客支持的 Markdown 语法 | 我的博客</title>
+<meta name="description" content="一份自测清单：标题、列表、引用、表格、代码块、行内样式、图片、脚注式注释。写作用法都以这一页为准。">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="这个博客支持的 Markdown 语法 | 我的博客">
+<meta property="og:description" content="一份自测清单：标题、列表、引用、表格、代码块、行内样式、图片、脚注式注释。写作用法都以这一页为准。">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" type="application/rss+xml" title="我的博客" href="../feed.xml">
+<script>(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">我的博客</a>
+    <nav class="nav"><a href="../index.html">首页</a><a href="../archive.html">归档</a><a href="../tags/index.html">标签</a><a href="../search.html">搜索</a><a href="../about.html">关于</a></nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换深浅色">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="post"><header class="post-header"><h1>这个博客支持的 Markdown 语法</h1><div class="post-meta"><time datetime="2025-01-15">2025-01-15</time><span>·</span><span>约 1 分钟</span><div class="chips"><a class="chip" href="../tags/技术.html">技术</a><a class="chip" href="../tags/markdown.html">Markdown</a></div></div></header><details class="toc" open><summary>目录</summary><ul><li><a href="#标题">标题</a></li><li class="toc-h3"><a href="#三级标题示例">三级标题示例</a></li><li><a href="#段落与换行">段落与换行</a></li><li><a href="#列表">列表</a></li><li><a href="#引用">引用</a></li><li><a href="#表格">表格</a></li><li><a href="#代码">代码</a></li><li><a href="#行内样式">行内样式</a></li><li><a href="#图片">图片</a></li><li><a href="#分隔线">分隔线</a></li><li><a href="#待办与提醒">待办与提醒</a></li></ul></details><div class="post-body"><p>这一页同时是语法清单和渲染测试。删掉它之前，先确认你的渲染器都支持这些。</p>
+<h2 id="标题">标题</h2>
+<p>支持一到六级，正文里一般用 <code>##</code> 和 <code>###</code>，<code>#</code> 留给文章标题。</p>
+<h3 id="三级标题示例">三级标题示例</h3>
+<h4 id="四级标题示例">四级标题示例</h4>
+<h2 id="段落与换行">段落与换行</h2>
+<p>段落之间空一行。软换行会被合并成同一段，
+若要在段落内强制换行，行末留两个空格。<br>
+这一行就是强制换行后的结果。</p>
+<h2 id="列表">列表</h2>
+<p>无序列表：</p>
+<ul><li>第一项</li><li>第二项<ul><li>嵌套的子项</li><li>另一个子项</li></ul></li><li>第三项</li></ul>
+<p>有序列表：</p>
+<ol><li>准备材料</li><li>开始动手</li><li>复盘总结</li></ol>
+<p>任务列表：</p>
+<ul><li><input type="checkbox" disabled checked> 已经做完的事</li><li><input type="checkbox" disabled> 还没做的事</li></ul>
+<h2 id="引用">引用</h2>
+<blockquote><p>引用可以包多行。
+第二行同样属于这个引用块。</p>
+<blockquote><p>也可以嵌套引用。</p></blockquote></blockquote>
+<h2 id="表格">表格</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">项目</th><th style="text-align:center">说明</th><th style="text-align:right">备注</th></tr></thead><tbody><tr><td style="text-align:left">生成器</td><td style="text-align:center"><code>build.py</code></td><td style="text-align:right">零依赖</td></tr><tr><td style="text-align:left">托管</td><td style="text-align:center">GitHub Pages</td><td style="text-align:right">免费</td></tr><tr><td style="text-align:left">部署</td><td style="text-align:center">GitHub Actions</td><td style="text-align:right">自动</td></tr></tbody></table></div>
+<h2 id="代码">代码</h2>
+<p>行内：<code>python build.py</code>。</p>
+<p>带语法高亮的代码块：</p>
+<div class="code-block"><pre><code class="language-javascript">const posts = await fetch("search.json").then((r) =&gt; r.json());
+console.log(`共 ${posts.length} 篇`);</code></pre></div>
+<p>没有语言标记的块：</p>
+<div class="code-block"><pre><code>纯文本块，不做高亮。
+   缩进也会原样保留。</code></pre></div>
+<h2 id="行内样式">行内样式</h2>
+<p><strong>粗体</strong>、<em>斜体</em>、<strong><em>粗斜体</em></strong>、<del>删除线</del>、<mark>高亮</mark>、<code>行内代码</code>。</p>
+<p>链接：<a href="https://docs.github.com/pages" title="官方文档" rel="noopener">GitHub Pages 文档</a>，
+自动链接：<a href="https://pages.github.com" rel="noopener" target="_blank">https://pages.github.com</a>。</p>
+<h2 id="图片">图片</h2>
+<div class="code-block"><pre><code class="language-markdown">![图片说明](/images/photo.jpg "可选标题")</code></pre></div>
+<p>图片放在 <code>static/</code> 下会原样拷贝到站点根目录，例如 <code>static/images/photo.jpg</code> 对应 <code>/images/photo.jpg</code>。</p>
+<h2 id="分隔线">分隔线</h2>
+<hr>
+<p>水平线以上是上一节。</p>
+<h2 id="待办与提醒">待办与提醒</h2>
+<blockquote><p><strong>注意</strong>：<code>draft: true</code> 的文章不会出现在构建结果里。写完了记得改掉。</p></blockquote></div></article><nav class="post-nav"><a class="pn prev" href="../posts/hello-world.html"><span>上一篇</span>你好，世界</a><a class="pn next" href="../posts/linux-tutorial.html"><span>下一篇</span>Linux 使用教程（入门到日常够用）</a></nav>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 站长</p>
+    <p class="footer-links"><a href="../feed.xml">RSS</a><span>·</span><a href="../archive.html">归档</a><span>·</span><a href="../sitemap.xml">站点地图</a></p>
+  </div>
+</footer>
+<script src="../app.js" defer></script>
+</body>
+</html>

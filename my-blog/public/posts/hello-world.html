@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你好，世界 | 我的博客</title>
+<meta name="description" content="第一篇博客。记录这个站点是怎么搭起来的，以及以后打算在这里写什么。">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="你好，世界 | 我的博客">
+<meta property="og:description" content="第一篇博客。记录这个站点是怎么搭起来的，以及以后打算在这里写什么。">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" type="application/rss+xml" title="我的博客" href="../feed.xml">
+<script>(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">我的博客</a>
+    <nav class="nav"><a href="../index.html">首页</a><a href="../archive.html">归档</a><a href="../tags/index.html">标签</a><a href="../search.html">搜索</a><a href="../about.html">关于</a></nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换深浅色">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="post"><header class="post-header"><h1>你好，世界</h1><div class="post-meta"><time datetime="2025-01-01">2025-01-01</time><span>·</span><span>约 1 分钟</span><div class="chips"><a class="chip" href="../tags/随笔.html">随笔</a></div></div></header><details class="toc" open><summary>目录</summary><ul><li><a href="#为什么用纯静态">为什么用纯静态</a></li><li><a href="#它是怎么工作的">它是怎么工作的</a></li><li><a href="#支持什么">支持什么</a></li><li><a href="#接下来">接下来</a></li></ul></details><div class="post-body"><p>这是我的第一篇文章。整个博客没有数据库、没有后端、没有 npm 依赖，
+写完 Markdown 推送到 GitHub，剩下的交给 Actions 和 GitHub Pages。</p>
+<h2 id="为什么用纯静态">为什么用纯静态</h2>
+<ul><li><strong>零运维</strong>：没有服务器要打补丁，没有插件要升级，也就没有半夜被打醒的运维事件。</li><li><strong>快</strong>：整站是纯 HTML/CSS/JS，几 KB 到几百 KB，首屏几乎立刻出现。</li><li><strong>活得久</strong>：Markdown + 一个 300 行的 Python 脚本，十年后照样能跑。</li><li><strong>免费</strong>：GitHub Pages 托管，自定义域名 + HTTPS 也不要钱。</li></ul>
+<h2 id="它是怎么工作的">它是怎么工作的</h2>
+<ol><li>在 <code>posts/</code> 里新建一个 <code>YYYY-MM-DD-slug.md</code>，开头写一段 front matter。</li><li>运行 <code>python build.py</code>，生成静态 HTML 到 <code>public/</code>。</li><li><code>git push</code>，GitHub Actions 自动构建并发布到 Pages。</li></ol>
+<blockquote><p>日常写作只需要第 1 步和第 3 步，第 2 步在 CI 里自动完成。</p></blockquote>
+<h2 id="支持什么">支持什么</h2>
+<p>写文章时可以用这些 Markdown 语法：</p>
+<div class="table-wrap"><table><thead><tr><th>语法</th><th>效果</th></tr></thead><tbody><tr><td><code>**粗体**</code></td><td><strong>粗体</strong></td></tr><tr><td><code>*斜体*</code></td><td><em>斜体</em></td></tr><tr><td><code>`行内代码`</code></td><td><code>行内代码</code></td></tr><tr><td><code>~~删除线~~</code></td><td><del>删除线</del></td></tr><tr><td><code>==高亮==</code></td><td><mark>高亮</mark></td></tr></tbody></table></div>
+<p>代码块带语言标记：</p>
+<div class="code-block"><pre><code class="language-python">def greet(name: str) -&gt; str:
+    return f"你好，{name}！"
+
+print(greet("世界"))</code></pre></div>
+<p>还有任务列表：</p>
+<ul><li><input type="checkbox" disabled checked> 搭好博客骨架</li><li><input type="checkbox" disabled checked> 打通自动部署</li><li><input type="checkbox" disabled> 写满十篇</li></ul>
+<h2 id="接下来">接下来</h2>
+<p>先把「侧边栏」「评论」这类东西砍掉——不是不需要，而是<strong>先确认自己能持续写</strong>。
+等内容多到需要的时候，再加也就几行代码的事。</p></div></article><nav class="post-nav"><a class="pn next" href="../posts/markdown-cheatsheet.html"><span>下一篇</span>这个博客支持的 Markdown 语法</a></nav>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 站长</p>
+    <p class="footer-links"><a href="../feed.xml">RSS</a><span>·</span><a href="../archive.html">归档</a><span>·</span><a href="../sitemap.xml">站点地图</a></p>
+  </div>
+</footer>
+<script src="../app.js" defer></script>
+</body>
+</html>
